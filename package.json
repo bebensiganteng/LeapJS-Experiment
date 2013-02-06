@@ -1,0 +1,12 @@
+{
+  "name": "Leap-JS",
+  "version": "0.0.1",
+  "description": "",
+  "main": "grunt.js",
+  "repository": "",
+  "author": "Bebensiganteng",
+  "dependencies": {
+    "grunt-contrib-coffee": "~0.3.2",
+    "grunt-reload": "~0.2.0"
+  }
+}
