@@ -26,6 +26,7 @@ _t
 				# but too lazy to copy and paste
 				attributes:
 					aNoise: type: 'f', value: []
+					aPosition: type: 'v3', value: []
 					
 				vertexShader: """
 				
@@ -35,6 +36,7 @@ _t
 					uniform float tick;
 
 					attribute float aNoise;
+					attribute vec3 aPosition;
 
 			    void main() {
 
@@ -43,7 +45,7 @@ _t
 			    		vec4 point = uVec4Array[i];
 			    		
 			    		if(point.w == 1.0) {
-			    			float d = distance(position.xyz, point.xyz);
+			    			float d = distance(aPosition.xyz, point.xyz);
 			    			if(d < 100.) {
 			    				float s = 1. - smoothstep(0., 100., d);
 			    				o = vec3(s * 100.);	
@@ -53,7 +55,7 @@ _t
 			    	}
 			    	*/
 
-			    	vec3 newPosition = position * vec3(sin(tick * aNoise) * .2 + 1.2);
+			    	vec3 newPosition = aPosition * vec3(sin(tick * aNoise) * .2 + 1.2);
 
 			    	vec4 mvPosition = modelViewMatrix * vec4( newPosition, 1.0 );
 

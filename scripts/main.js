@@ -4,7 +4,8 @@
     baseUrl: '/',
     paths: {
       three: 'scripts/vendor/three',
-      app: 'scripts'
+      app: 'scripts',
+      vendor: 'scripts/vendor/'
     },
     map: {
       '*': {
